@@ -10,7 +10,7 @@ function peco-src () {
 zle -N peco-src
 bindkey '^]' peco-src
 
-# git
+# gitプロンプト表示
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
