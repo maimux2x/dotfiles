@@ -32,3 +32,11 @@
   cp= cherry-pick
   rv = remote -v
   
+[include]
+	path = ~/.gitconfig_shared
+[core]
+	commentchar = ~
+[user]
+	name = maimu
+[ghq]
+	root = ~/Documents/Source
