@@ -60,12 +60,12 @@
 !/.xinitrc
 !/.xprofile
 !/.xsessionrc
-!/.config/
-!/.config/**
+# !/.config/
+# !/.config/**
 /.config/gh/state.yml
 /.config/gh/hosts.yml
 /.config/coc/**
-/.config/nvim/secrets.vim
+# /.config/nvim/secrets.vim
 /.config/github-copilot/**
 /.config/configstore/update-notifier-npm.json
 !/.gitignore_global
