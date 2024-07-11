@@ -41,3 +41,5 @@
 	email = m0smile10often@gmail.com
 [ghq]
 	root = ~/Documents/Source
+[push]
+	default = tracking

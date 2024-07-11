@@ -36,3 +36,11 @@ eval "$(rbenv init -)"
 eval "$(direnv hook zsh)"
 
 . "$HOME/.cargo/env"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export EDITOR=nvim
+
+# history
+setopt share_history
+setopt inc_append_history
+setopt inc_append_history_time
+setopt hist_ignore_all_dups
