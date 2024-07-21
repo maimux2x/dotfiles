@@ -32,7 +32,7 @@ return {
         'marksman',
         'pylsp',
         'rubocop',
-        'ruby_lsp',
+        'solargraph',
         'rust_analyzer',
         'sqlls',
         'stimulus_ls',

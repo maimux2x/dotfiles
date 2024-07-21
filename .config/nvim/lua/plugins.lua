@@ -68,7 +68,7 @@ return {
 
       local builtin = require('telescope.builtin')
 
-      vim.keymap.set('n', '<Space>fb', builtin.buffers)
+      vim.keymap.set('n', '<Space><Space>', builtin.buffers)
       vim.keymap.set('n', '<Space>ff', builtin.find_files)
       vim.keymap.set('n', '<Space>fm', builtin.marks)
       vim.keymap.set('n', '<Space>fo', builtin.oldfiles)
