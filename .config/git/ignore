@@ -4,4 +4,5 @@ configstore/
 gh/
 github-copilot/
 iterm2/
+lazy-lock.json
 yarn/

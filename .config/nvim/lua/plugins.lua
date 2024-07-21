@@ -7,12 +7,26 @@ return {
   },
   {
     'Wansmer/treesj',
-    opts = {}
+    opts = {
+      use_default_keymaps = true
+    }
   },
   'andymass/vim-matchup',
+  'bioSyntax/bioSyntax-vim',
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    opts = {
+      useDefaultKeymaps = true
+    },
+  },
   'dhruvasagar/vim-table-mode',
   'editorconfig/editorconfig-vim',
   'famiu/bufdelete.nvim',
+  {
+    'folke/trouble.nvim',
+    dependencies = 'kyazdani42/nvim-web-devicons',
+    opts = {}
+  },
   {
     'gabrielpoca/replacer.nvim',
     config = function()
@@ -26,6 +40,7 @@ return {
       vim.fn['mkdp#util#install']()
     end
   },
+  'imsnif/kdl.vim',
   'jghauser/mkdir.nvim',
   {
     'junegunn/vim-easy-align',
@@ -35,10 +50,6 @@ return {
       vim.keymap.set('x', '<Space>:', ':EasyAlign :<CR>')
       vim.keymap.set('x', '<Space>=', ':EasyAlign =<CR>')
     end
-  },
-  {
-    'kana/vim-textobj-indent',
-    dependencies = 'kana/vim-textobj-user'
   },
   {
     'kylechui/nvim-surround',
