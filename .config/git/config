@@ -36,6 +36,7 @@
 	path = ~/.gitconfig_shared
 [core]
 	commentchar = ~
+	editor = nvim
 [user]
 	name = maimux2x
 	email = m0smile10often@gmail.com
