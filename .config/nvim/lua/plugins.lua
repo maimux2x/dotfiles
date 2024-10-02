@@ -96,8 +96,4 @@ return {
   'varnishcache-friends/vim-varnish',
   'windwp/nvim-ts-autotag',
   'wsdjeg/vim-fetch',
-  {
-    'neoclide/coc.nvim',
-    branch = 'release'
-  }
 }

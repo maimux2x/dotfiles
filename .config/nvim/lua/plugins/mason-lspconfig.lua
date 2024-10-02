@@ -26,6 +26,7 @@ return {
         'gopls',
         'graphql',
         'html',
+        'jdtls',
         'jsonls',
         'lemminx',
         'lua_ls',
