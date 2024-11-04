@@ -30,8 +30,8 @@ export PATH=$PATH:$GOPATH/bin
 
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 eval "$(direnv hook zsh)"
 
@@ -53,3 +53,4 @@ setopt hist_ignore_all_dups
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/maimux2x/.opam/opam-init/init.zsh' ]] || source '/Users/maimux2x/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+eval "$(/Users/maimu/.local/bin/mise activate zsh)"
