@@ -1,0 +1,9 @@
+font-family = ""
+font-family = "HackGen Console NF"
+font-family = "Noto Sans Mono CJK JP"
+font-size = 13
+font-feature = -calt
+font-feature = -dlig
+font-feature = -liga
+window-width = 125
+window-height = 58
