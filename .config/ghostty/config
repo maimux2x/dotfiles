@@ -1,9 +1,24 @@
-font-family = ""
-font-family = "HackGen Console NF"
-font-family = "Noto Sans Mono CJK JP"
+theme = catppuccin-mocha
+
+font-family = JetBrainsMonoNL Nerd Font Mono
+
 font-size = 13
+
 font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
+
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
+
+font-thicken = true
+font-thicken-strength = 1
+
+alpha-blending = linear
+
+adjust-cell-width = -1
+adjust-cell-height = 2
+
 window-width = 125
 window-height = 58
