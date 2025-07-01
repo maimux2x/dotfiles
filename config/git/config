@@ -44,3 +44,11 @@
 	root = ~/Documents/Source
 [push]
 	default = tracking
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+	ui = auto
+	diff = auto

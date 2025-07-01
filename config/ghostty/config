@@ -22,3 +22,4 @@ adjust-cell-height = 2
 
 window-width = 125
 window-height = 58
+keybind = shift+enter=text:\n
