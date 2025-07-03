@@ -41,7 +41,7 @@ eval "$(direnv hook zsh)"
 # OpenJDK 17 など のバイナリを先頭に追加し、java, javac コマンドでそのバージョンが優先されるように設定
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
-デフォルトエディタを Neovim に固定
+# デフォルトエディタを Neovim に固定
 export EDITOR=nvim
 
 # history
@@ -58,3 +58,6 @@ export NVM_DIR="$HOME/.nvm"
 # Terraform など bash 補完しか提供しないツールを zsh でも補完可能
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# mise
+eval "$(mise activate zsh)"
