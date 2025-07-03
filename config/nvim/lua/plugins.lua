@@ -1,9 +1,13 @@
 return {
   {
-    'EdenEast/nightfox.nvim',
-    config = function()
-      vim.cmd 'colorscheme nightfox'
-    end
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "github/copilot.vim" },
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
+    opts = {
+    }
   },
   {
     'Wansmer/treesj',
@@ -11,27 +15,22 @@ return {
       use_default_keymaps = true
     }
   },
-  'andymass/vim-matchup',
-  'bioSyntax/bioSyntax-vim',
   {
-    "chrisgrieser/nvim-various-textobjs",
-    opts = {
-      useDefaultKeymaps = true
-    },
+    'alker0/chezmoi.vim',
+    lazy = false,
+    init = function()
+      vim.g['chezmoi#use_tmp_buffer']  = true
+      vim.g['chezmoi#source_dir_path'] = vim.env.HOME .. '/Repositories/github.com/ursm/dotfiles'
+    end
   },
+  'andreshazard/vim-freemarker',
+  'andymass/vim-matchup',
   'dhruvasagar/vim-table-mode',
   'editorconfig/editorconfig-vim',
-  'famiu/bufdelete.nvim',
   {
     'folke/trouble.nvim',
     dependencies = 'kyazdani42/nvim-web-devicons',
     opts = {}
-  },
-  {
-    'gabrielpoca/replacer.nvim',
-    config = function()
-      vim.keymap.set('n', '<Space>r', require('replacer').run)
-    end
   },
   'github/copilot.vim',
   {
@@ -40,7 +39,14 @@ return {
       vim.fn['mkdp#util#install']()
     end
   },
-  'imsnif/kdl.vim',
+  {
+    'greggh/claude-code.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
+    opts = {},
+    config = function()
+      vim.keymap.set('n', '<Leader>cc', '<Cmd>ClaudeCode<CR>')
+    end
+  },
   'jghauser/mkdir.nvim',
   {
     'junegunn/vim-easy-align',
@@ -52,14 +58,55 @@ return {
     end
   },
   {
-    'kylechui/nvim-surround',
-    opts = {}
-  },
-  {
     'kevinhwang91/nvim-hlslens',
     opts = {}
   },
+  {
+    'kiyoon/treesitter-indent-object.nvim',
+    keys = {
+      {
+        'ai',
+        function() require'treesitter_indent_object.textobj'.select_indent_outer() end,
+        mode = {'x', 'o'},
+        desc = 'Select context-aware indent (outer)'
+      },
+      {
+        'aI',
+        function() require'treesitter_indent_object.textobj'.select_indent_outer(true) end,
+        mode = {'x', 'o'},
+        desc = 'Select context-aware indent (outer, line-wise)'
+      },
+      {
+        'ii',
+        function() require'treesitter_indent_object.textobj'.select_indent_inner() end,
+        mode = {'x', 'o'},
+        desc = 'Select context-aware indent (inner, partial range)'
+      },
+      {
+        'iI',
+        function() require'treesitter_indent_object.textobj'.select_indent_inner(true, 'V') end,
+        mode = {'x', 'o'},
+        desc = 'Select context-aware indent (inner, entire range) in line-wise visual mode'
+      }
+    }
+  },
+  {
+    'kylechui/nvim-surround',
+    opts = {}
+  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   main = 'ibl',
+  --   opts = {}
+  -- },
   'machakann/vim-swap',
+  {
+    'morhetz/gruvbox',
+    config = function()
+      vim.cmd 'colorscheme gruvbox'
+    end
+  },
+  'mizlan/iswap.nvim',
   {
     'nvim-telescope/telescope.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
@@ -68,7 +115,7 @@ return {
 
       local builtin = require('telescope.builtin')
 
-      vim.keymap.set('n', '<Space><Space>', builtin.buffers)
+      vim.keymap.set('n', '<Space>fb', builtin.buffers)
       vim.keymap.set('n', '<Space>ff', builtin.find_files)
       vim.keymap.set('n', '<Space>fm', builtin.marks)
       vim.keymap.set('n', '<Space>fo', builtin.oldfiles)
@@ -77,7 +124,6 @@ return {
       vim.keymap.set({ 'n', 'x' }, '<Space>fc', require('telescope.builtin').command_history)
     end
   },
-  'mizlan/iswap.nvim',
   'rhysd/conflict-marker.vim',
   'rhysd/git-messenger.vim',
   {
@@ -87,6 +133,8 @@ return {
   },
   'rlue/vim-barbaric',
   'slim-template/vim-slim',
+  'thinca/vim-ambicmd',
+  'thinca/vim-qfreplace',
   'tpope/vim-commentary',
   'tpope/vim-eunuch',
   'tpope/vim-fugitive',
@@ -95,5 +143,5 @@ return {
   'tpope/vim-unimpaired',
   'varnishcache-friends/vim-varnish',
   'windwp/nvim-ts-autotag',
-  'wsdjeg/vim-fetch',
+  'wsdjeg/vim-fetch'
 }

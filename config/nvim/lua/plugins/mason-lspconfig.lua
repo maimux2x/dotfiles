@@ -13,13 +13,13 @@ return {
     require('mason-lspconfig').setup {
       ensure_installed = {
         'ansiblels',
-        'autotools_ls',
         'bashls',
         'clangd',
+        'css_variables',
         'cssls',
         'denols',
-        'dockerls',
         'docker_compose_language_service',
+        'dockerls',
         'ember',
         'eslint',
         'glint',
