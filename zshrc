@@ -56,7 +56,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Terraform など bash 補完しか提供しないツールを zsh でも補完可能
-autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit
+compinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # mise
