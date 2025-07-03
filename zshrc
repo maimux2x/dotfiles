@@ -25,18 +25,23 @@ PROMPT='
 [%B%F{red}%n@%m%f%b:%F{green}%~%f]%F{cyan}$vcs_info_msg_0_%f
 %F{yellow}$%f '
 
+# Go 開発環境
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
+# PostgreSQL 16 (Homebrew)
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-
+# .envrc を自動ロード／アンロード
 eval "$(direnv hook zsh)"
 
+# Rust のツールチェイン管理ツール rustup が生成した初期化スクリプトを読み込む
 . "$HOME/.cargo/env"
+
+# OpenJDK 17 など のバイナリを先頭に追加し、java, javac コマンドでそのバージョンが優先されるように設定
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+デフォルトエディタを Neovim に固定
 export EDITOR=nvim
 
 # history
@@ -45,19 +50,11 @@ setopt inc_append_history
 setopt inc_append_history_time
 setopt hist_ignore_all_dups
 
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/Users/maimux2x/.opam/opam-init/init.zsh' ]] || source '/Users/maimux2x/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
-eval "$(/Users/maimu/.local/bin/mise activate zsh)"
-
+# NVM（Node Version Manager）周り
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Terraform など bash 補完しか提供しないツールを zsh でも補完可能
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
