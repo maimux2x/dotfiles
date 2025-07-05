@@ -101,9 +101,9 @@ return {
   -- },
   'machakann/vim-swap',
   {
-    'morhetz/gruvbox',
+    'EdenEast/nightfox.nvim',
     config = function()
-      vim.cmd 'colorscheme gruvbox'
+      vim.cmd 'colorscheme nordfox'
     end
   },
   'mizlan/iswap.nvim',
