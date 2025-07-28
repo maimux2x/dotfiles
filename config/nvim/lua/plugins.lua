@@ -143,5 +143,10 @@ return {
   'tpope/vim-unimpaired',
   'varnishcache-friends/vim-varnish',
   'windwp/nvim-ts-autotag',
-  'wsdjeg/vim-fetch'
+  'wsdjeg/vim-fetch',
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    opts = {}
+  }
 }
