@@ -32,9 +32,6 @@ export PATH=$PATH:$GOPATH/bin
 # PostgreSQL 16 (Homebrew)
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-# .envrc を自動ロード／アンロード
-eval "$(direnv hook zsh)"
-
 # Rust のツールチェイン管理ツール rustup が生成した初期化スクリプトを読み込む
 . "$HOME/.cargo/env"
 
@@ -49,16 +46,6 @@ setopt share_history
 setopt inc_append_history
 setopt inc_append_history_time
 setopt hist_ignore_all_dups
-
-# NVM（Node Version Manager）周り
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Terraform など bash 補完しか提供しないツールを zsh でも補完可能
-autoload -Uz compinit
-compinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # mise
 eval "$(mise activate zsh)"
