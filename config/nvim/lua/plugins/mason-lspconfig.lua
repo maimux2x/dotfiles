@@ -5,8 +5,7 @@ return {
     {
       'williamboman/mason.nvim',
       opts = {}
-    },
-    'hrsh7th/cmp-nvim-lsp',
+    }
   },
 
   config = function()
@@ -45,12 +44,7 @@ return {
       }
     }
 
-    local opt = {
-      capabilities = require('cmp_nvim_lsp').default_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
-      )
-    }
-
+    local opt = {}
     local lspconfig = require('lspconfig')
 
     require('mason-lspconfig').setup {

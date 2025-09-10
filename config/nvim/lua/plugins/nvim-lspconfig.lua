@@ -4,12 +4,19 @@ return {
     local lspconfig = require('lspconfig')
 
     lspconfig.ruby_lsp.setup({
+<<<<<<< Updated upstream
       settings = {
         rubyLsp = {
           addonSettings = {
             ['Ruby LSP Rails'] = {
               enablePendingMigrationsPrompt = false
             }
+=======
+      init_options = {
+        addonSettings = {
+          ['Ruby LSP Rails'] = {
+            enablePendingMigrationsPrompt = false
+>>>>>>> Stashed changes
           }
         }
       }
