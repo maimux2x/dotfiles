@@ -45,6 +45,7 @@ return {
     }
 
     local opt = {}
+
     local lspconfig = require('lspconfig')
 
     require('mason-lspconfig').setup {

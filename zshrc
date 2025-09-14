@@ -1,4 +1,3 @@
-# ghq
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
@@ -9,6 +8,17 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# ghq for gentoo
+function fzf-ghq-cd() {
+   local repo=$(ghq list | fzf)
+   if [[ -n "$repo" ]]; then
+     cd "$(ghq root)/$repo"
+     zle reset-prompt
+   fi
+ }
+ zle -N fzf-ghq-cd
+ bindkey '^g' fzf-ghq-cd
 
 # gitプロンプト表示
 autoload -Uz vcs_info
@@ -32,20 +42,29 @@ export PATH=$PATH:$GOPATH/bin
 # PostgreSQL 16 (Homebrew)
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-# Rust のツールチェイン管理ツール rustup が生成した初期化スクリプトを読み込む
-. "$HOME/.cargo/env"
-
-# OpenJDK 17 など のバイナリを先頭に追加し、java, javac コマンドでそのバージョンが優先されるように設定
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-
 # デフォルトエディタを Neovim に固定
 export EDITOR=nvim
 
+# mise
+path=(
+  $HOME/.local/bin
+  $path
+)
+
+eval "$(mise activate zsh)"
+
+# oh-my-zsh
+plugins=(
+  git last-working-dir
+  zsh-autosuggestions
+)
+
 # history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
 setopt share_history
 setopt inc_append_history
 setopt inc_append_history_time
 setopt hist_ignore_all_dups
-
-# mise
-eval "$(mise activate zsh)"
