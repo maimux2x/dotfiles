@@ -53,11 +53,15 @@ path=(
 
 eval "$(mise activate zsh)"
 
-# oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
+
 plugins=(
-  git last-working-dir
+  git
+  last-working-dir
   zsh-autosuggestions
 )
+
+source $ZSH/oh-my-zsh.sh
 
 # history
 HISTFILE=~/.zsh_history
