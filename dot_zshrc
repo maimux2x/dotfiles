@@ -1,4 +1,4 @@
-# ghq with mac
+<LeftMouse># ghq with mac
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
