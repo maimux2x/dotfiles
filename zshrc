@@ -1,15 +1,14 @@
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^]' peco-src
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
 
-# ghq for gentoo
+plugins=(
+  git
+  last-working-dir
+  zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
 function fzf-ghq-cd() {
    local repo=$(ghq list | fzf)
    if [[ -n "$repo" ]]; then
@@ -52,17 +51,6 @@ path=(
 )
 
 eval "$(mise activate zsh)"
-
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
-
-plugins=(
-  git
-  last-working-dir
-  zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
 
 # history
 HISTFILE=~/.zsh_history
