@@ -1,16 +1,13 @@
-<LeftMouse># ghq with mac
-function peco-src () {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^]' peco-src
+export ZSH="$HOME/.oh-my-zsh"
 
-# ghq with gentoo
+plugins=(
+  git
+  last-working-dir
+  zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
 eval "$(fzf --zsh)"
 function fzf-ghq-cd() {
    local repo=$(ghq list | fzf)
@@ -61,13 +58,3 @@ setopt hist_ignore_all_dups
 # mise
 PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
-
-export ZSH="$HOME/.oh-my-zsh"
-
-plugins=(
-  git
-  last-working-dir
-  zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
