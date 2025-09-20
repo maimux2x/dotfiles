@@ -1,1 +1,2 @@
-DOTFILES_DIRS="/Users/maimu/Documents/Source/github.com/maimux2x/dotfiles/"
+DOTFILES_DIRS="$HOME/Documents/Source/github.com/maimux2x/dotfiles"
+EXCLUDES='README.md'
