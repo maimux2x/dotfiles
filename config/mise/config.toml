@@ -3,5 +3,5 @@ node = "lts"
 ruby = "3.4.6"
 
 [settings]
-idiomatic_version_file_enable_tools = ["ruby", "node"]
+idiomatic_version_file = true
 
