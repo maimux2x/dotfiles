@@ -58,3 +58,7 @@ setopt hist_ignore_all_dups
 # mise
 PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
+
+## エイリアス
+
+alias br='bundle exec rspec'
