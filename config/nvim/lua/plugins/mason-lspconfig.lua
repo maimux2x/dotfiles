@@ -44,35 +44,34 @@ return {
       }
     }
 
-    local opt = {}
-
-    local lspconfig = require('lspconfig')
-
     require('mason-lspconfig').setup {
-      function(server)
-        if server == 'denols' then
-          lspconfig.denols.setup(vim.tbl_extend('force', opt, {
-            root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc')
-          }))
-        elseif server == 'lua_ls' then
-          lspconfig.lua_ls.setup(vim.tbl_extend('force', opt, {
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = {'vim'}
+      handlers = {
+        function(server_name)
+          if server_name == 'denols' then
+            vim.lsp.config(server_name, {
+              root_markers = {'deno.json', 'deno.jsonc'}
+            })
+          elseif server_name == 'lua_ls' then
+            vim.lsp.config(server_name, {
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    globals = {'vim'}
+                  }
                 }
               }
-            }
-          }))
-        elseif server == 'tsserver' then
-          lspconfig.tsserver.setup(vim.tbl_extend('force', opt, {
-            root_dir = lspconfig.util.root_pattern('package.json'),
-            single_file_support = false
-          }))
-        else
-          lspconfig[server].setup(opt)
+            })
+          elseif server_name == 'tsserver' or server_name == 'ts_ls' then
+            vim.lsp.config(server_name, {
+              root_markers = {'package.json'},
+              single_file_support = false
+            })
+          else
+            vim.lsp.config(server_name, {})
+          end
+          vim.lsp.enable(server_name)
         end
-      end
+      }
     }
   end
 }
