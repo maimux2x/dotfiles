@@ -38,8 +38,9 @@ PROMPT='
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
-# PostgreSQL 16 (Homebrew)
+# PostgreSQL
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PGUSER=postgres
 
 
 # デフォルトエディタを Neovim に固定
