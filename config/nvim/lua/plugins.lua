@@ -5,14 +5,6 @@ return {
       use_default_keymaps = true
     }
   },
-  {
-    'alker0/chezmoi.vim',
-    lazy = false,
-    init = function()
-      vim.g['chezmoi#use_tmp_buffer']  = true
-      vim.g['chezmoi#source_dir_path'] = vim.env.HOME .. '/Repositories/github.com/ursm/dotfiles'
-    end
-  },
   'andreshazard/vim-freemarker',
   'andymass/vim-matchup',
   'dhruvasagar/vim-table-mode',

@@ -38,14 +38,6 @@ PROMPT='
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 
-# PostgreSQL
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-export PGUSER=postgres
-
-
-# デフォルトエディタを Neovim に固定
-export EDITOR=nvim
-
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -63,3 +55,16 @@ eval "$(mise activate zsh)"
 ## エイリアス
 
 alias br='bundle exec rspec'
+
+# 環境ごとの設定
+case $OSTYPE in
+  linux*)
+    export PGUSER=postgres
+  ;;
+  darwin*)
+    export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+    export EDITOR=nvim
+    alias vi=nvim
+  ;;
+esac
