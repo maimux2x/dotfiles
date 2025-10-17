@@ -14,7 +14,7 @@ return {
     dependencies = 'kyazdani42/nvim-web-devicons',
     opts = {}
   },
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
   {
     'iamcco/markdown-preview.nvim',
     build = function()
