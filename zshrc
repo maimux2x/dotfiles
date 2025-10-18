@@ -60,6 +60,7 @@ alias br='bundle exec rspec'
 case $OSTYPE in
   linux*)
     export PGUSER=postgres
+    export EDITOR=nvim
   ;;
   darwin*)
     export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
