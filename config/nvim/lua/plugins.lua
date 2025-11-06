@@ -105,10 +105,7 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
     opts = {}
   },
-  'rlue/vim-barbaric',
   'slim-template/vim-slim',
-  'thinca/vim-ambicmd',
-  'thinca/vim-qfreplace',
   'tpope/vim-commentary',
   'tpope/vim-eunuch',
   'tpope/vim-fugitive',
