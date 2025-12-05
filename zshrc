@@ -82,3 +82,6 @@ case $OSTYPE in
     alias vi=nvim
   ;;
 esac
+
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
