@@ -1,0 +1,4 @@
+snippets:
+  - name: bundle exec rspec
+    keyword: br
+    snippet: bundle exec rspec

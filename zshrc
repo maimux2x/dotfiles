@@ -53,8 +53,22 @@ PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
 
 ## エイリアス
+source $HOME/Documents/Source/github.com/yuki-yano/zeno.zsh
+export ZENO_HOME=~/.config/zeno
 
-alias br='bundle exec rspec'
+if [[ -n $ZENO_LOADED ]]; then
+  bindkey ' '  zeno-auto-snippet
+
+  bindkey '^m' zeno-auto-snippet-and-accept-line
+
+  bindkey '^i' zeno-completion
+
+  bindkey '^xx' zeno-insert-snippet
+
+  bindkey '^x '  zeno-insert-space
+  bindkey '^x^m' accept-line
+  bindkey '^x^z' zeno-toggle-auto-snippet
+fi
 
 # 環境ごとの設定
 case $OSTYPE in
