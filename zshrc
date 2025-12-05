@@ -48,6 +48,11 @@ setopt inc_append_history
 setopt inc_append_history_time
 setopt hist_ignore_all_dups
 
+zshaddhistory() {
+    local line="${1%%$'\n'}"
+    [[ ! "$line" =~ "^(cd|ls|rm|rmdir)($| )" ]]
+}
+
 # mise
 PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
