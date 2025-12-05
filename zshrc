@@ -54,7 +54,7 @@ eval "$(mise activate zsh)"
 
 ## zeno.zsh
 export ZENO_HOME=~/.config/zeno
-source $HOME/Documents/Source/github.com/yuki-yano/zeno.zsh
+source $HOME/Documents/Source/github.com/yuki-yano/zeno.zsh/zeno.zsh
 
 if [[ -n $ZENO_LOADED ]]; then
   bindkey ' '  zeno-auto-snippet
