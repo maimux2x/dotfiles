@@ -52,9 +52,9 @@ setopt hist_ignore_all_dups
 PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
 
-## エイリアス
-source $HOME/Documents/Source/github.com/yuki-yano/zeno.zsh
+## zeno.zsh
 export ZENO_HOME=~/.config/zeno
+source $HOME/Documents/Source/github.com/yuki-yano/zeno.zsh
 
 if [[ -n $ZENO_LOADED ]]; then
   bindkey ' '  zeno-auto-snippet
