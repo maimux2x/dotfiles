@@ -1,0 +1,20 @@
+shell = 'zsh'
+
+[plugins]
+
+[plugins.ohmyzsh]
+github = 'ohmyzsh/ohmyzsh'
+use = ['lib/last-working-dir.zsh', 'themes/gentoo.zsh-theme']
+
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+
+[plugins.fzf]
+inline = '''
+# Gentoo fzf
+source /usr/share/fzf/key-bindings.zsh
+'''
+
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
