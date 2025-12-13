@@ -12,8 +12,10 @@ github = 'zsh-users/zsh-autosuggestions'
 
 [plugins.fzf]
 inline = '''
-# Gentoo fzf
-source /usr/share/fzf/key-bindings.zsh
+case $OSTYPE in
+  linux*)  source /usr/share/fzf/key-bindings.zsh ;;
+  darwin*) eval "$(fzf --zsh)" ;;
+esac
 '''
 
 [plugins.zsh-abbr]

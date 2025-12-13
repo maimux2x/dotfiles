@@ -1,1 +1,1 @@
-abbr br='bundle exec rspec'
+abbr -q -S br='bundle exec rspec'
