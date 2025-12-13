@@ -1,14 +1,8 @@
-export ZSH="$HOME/.oh-my-zsh"
+eval "$(sheldon source)"
 
-plugins=(
-  git
-  last-working-dir
-  zsh-autosuggestions
-)
+autoload -Uz compinit
+compinit
 
-source $ZSH/oh-my-zsh.sh
-
-eval "$(fzf --zsh)"
 function fzf-ghq-cd() {
    local repo=$(ghq list | fzf)
    if [[ -n "$repo" ]]; then
@@ -18,6 +12,8 @@ function fzf-ghq-cd() {
  }
  zle -N fzf-ghq-cd
  bindkey '^g' fzf-ghq-cd
+
+source ~/.config/zsh/abbr.zsh
 
 # gitプロンプト表示
 autoload -Uz vcs_info
@@ -56,24 +52,6 @@ zshaddhistory() {
 # mise
 PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
-
-## zeno.zsh
-export ZENO_HOME=~/.config/zeno
-source $HOME/Documents/Source/github.com/yuki-yano/zeno.zsh/zeno.zsh
-
-if [[ -n $ZENO_LOADED ]]; then
-  bindkey ' '  zeno-auto-snippet
-
-  bindkey '^m' zeno-auto-snippet-and-accept-line
-
-  bindkey '^i' zeno-completion
-
-  bindkey '^xx' zeno-insert-snippet
-
-  bindkey '^x '  zeno-insert-space
-  bindkey '^x^m' accept-line
-  bindkey '^x^z' zeno-toggle-auto-snippet
-fi
 
 # 環境ごとの設定
 case $OSTYPE in
