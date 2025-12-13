@@ -35,7 +35,7 @@
 [include]
 	path = ~/.gitconfig_shared
 [core]
-	commentchar = ~
+	commentchar = "#"
 	editor = nvim
 [user]
 	name = maimux2x
