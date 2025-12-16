@@ -1,6 +1,8 @@
-font-family = JetBrainsMonoNL Nerd Font Mono
-
+# Font
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
 font-size = 13
+font-family = JetBrainsMonoNL Nerd Font Mono
 
 font-feature = -calt
 font-feature = -dlig
@@ -13,11 +15,19 @@ font-style-bold-italic = false
 font-thicken = true
 font-thicken-strength = 1
 
-alpha-blending = linear
-
-adjust-cell-width = -1
-adjust-cell-height = 2
-
+# Window
+window-theme = ghostty
+window-padding-x = 14
+window-padding-y = 14
+confirm-close-surface=false
+resize-overlay = never
+gtk-toolbar-style = flat
 window-width = 125
 window-height = 58
-keybind = shift+enter=text:\n
+
+# Dynamic theme colors
+config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
+
+# Cursor styling
+cursor-style = "block"
+cursor-style-blink = false
