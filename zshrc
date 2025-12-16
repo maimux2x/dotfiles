@@ -13,8 +13,6 @@ function fzf-ghq-cd() {
  zle -N fzf-ghq-cd
  bindkey '^g' fzf-ghq-cd
 
-source ~/.config/zsh/abbr.zsh
-
 # gitプロンプト表示
 autoload -Uz vcs_info
 setopt prompt_subst
