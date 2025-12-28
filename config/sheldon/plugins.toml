@@ -4,8 +4,7 @@ shell = 'zsh'
 
 [plugins.ohmyzsh]
 github = 'ohmyzsh/ohmyzsh'
-use = ['themes/gentoo.zsh-theme']
-
+use = ['lib/{functions,termsupport}.zsh', 'themes/gentoo.zsh-theme']
 
 [plugins.zsh-autosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
