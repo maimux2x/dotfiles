@@ -42,5 +42,33 @@ config.colors = {
   cursor_border = "#FFFFFF",
 }
 
+-- Key bindings
+local act = wezterm.action
+
+wezterm.on("update-right-status", function(window, pane)
+  local name = window:active_key_table()
+  if name then
+    name = "TABLE: " .. name
+  end
+  window:set_right_status(name or "")
+end)
+
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+
+config.keys = {
+  -- Copy mode
+  { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
+  { key = "c", mods = "SUPER", action = act.CopyTo("Clipboard") },
+  { key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard") },
+  -- Split pane
+  { key = "d", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+  { key = "r", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+  { key = "x", mods = "LEADER", action = act({ CloseCurrentPane = { confirm = true } }) },
+  { key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+  { key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+  { key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+  { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") }
+}
+
 -- Finally, return the configuration to wezterm:
 return config
