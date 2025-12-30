@@ -15,6 +15,8 @@ vim.opt.list          = true
 vim.opt.number        = true
 vim.opt.tabstop       = 4
 vim.opt.wildmode      = {'longest:full', 'full'}
+-- share clipboard with OS
+vim.opt.clipboard:append('unnamedplus,unnamed')
 
 vim.keymap.set('n', '<M-Left>',  ':<C-u>tabprevious<CR>')
 vim.keymap.set('n', '<M-Right>', ':<C-u>tabnext<CR>')
