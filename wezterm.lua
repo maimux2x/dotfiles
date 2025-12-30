@@ -54,7 +54,7 @@ wezterm.on("update-right-status", function(window, pane)
   window:set_right_status(name or "")
 end)
 
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "w", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
   -- Copy mode
