@@ -35,5 +35,12 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   }
 end)
 
+-- Cursor color
+config.colors = {
+  cursor_bg = "#FFFFFF",
+  cursor_fg = "#000000",
+  cursor_border = "#FFFFFF",
+}
+
 -- Finally, return the configuration to wezterm:
 return config
