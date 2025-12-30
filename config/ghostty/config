@@ -1,33 +1,24 @@
-# Font
-font-family = "JetBrainsMono Nerd Font"
-font-style = Regular
-font-size = 13
-font-family = JetBrainsMonoNL Nerd Font Mono
+### appearance
 
-font-feature = -cctrl
+cursor-style = block
+cursor-style-blink = false
+custom-shader = ./gradient-background.glsl
+custom-shader = /Users/kawarimidoll/dotfiles/.config/ghostty/cursor-blaze.glsl
+font-family = "Moralerspace Krypton HWNF"
+font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
+font-size = 13
 
-font-style-bold = false
-font-style-italic = false
-font-style-bold-italic = false
+### features
 
-font-thicken = true
-font-thicken-strength = 1
+clipboard-read = ask
+clipboard-write = allow
+copy-on-select = true
+link-url = true
+shell-integration = detect
+shell-integration-features = no-cursor
+link-previews = osc8
+quick-terminal-size = 600px,800px
+quick-terminal-position = bottom
 
-# Window
-window-theme = ghostty
-window-padding-x = 14
-window-padding-y = 14
-confirm-close-surface=false
-resize-overlay = never
-gtk-toolbar-style = flat
-window-width = 125
-window-height = 58
-
-# Dynamic theme colors
-config-file = ?"~/.config/omarchy/current/theme/ghostty.conf"
-
-# Cursor styling
-cursor-style = "block"
-cursor-style-blink = false
