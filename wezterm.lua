@@ -12,6 +12,7 @@ config.initial_rows = 200
 
 -- or, changing the font size and color scheme.
 config.font_size = 13
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.use_ime = true
 config.window_decorations = "RESIZE"
 config.show_new_tab_button_in_tab_bar = false
