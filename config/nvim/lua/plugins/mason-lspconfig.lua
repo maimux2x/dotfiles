@@ -52,7 +52,7 @@ return {
         'dockerls',
         'ember',
         'eslint',
-        'glint',
+        -- 'glint', -- nvim-lspconfig内部でconfig nil エラーが発生するため無効化
         'gopls',
         'graphql',
         'html',
