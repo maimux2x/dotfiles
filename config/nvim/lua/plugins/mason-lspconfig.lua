@@ -40,6 +40,9 @@ return {
       }
     })
 
+    -- glintはnvim-lspconfig内部でconfig nilエラーが発生するため無効化
+    vim.lsp.enable('glint', false)
+
     require('mason-lspconfig').setup {
       ensure_installed = {
         'ansiblels',
