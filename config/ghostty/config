@@ -2,8 +2,6 @@
 
 cursor-style = block
 cursor-style-blink = false
-custom-shader = ./gradient-background.glsl
-custom-shader = /Users/kawarimidoll/dotfiles/.config/ghostty/cursor-blaze.glsl
 font-family = "Moralerspace Krypton HWNF"
 font-feature = -calt
 font-feature = -dlig
