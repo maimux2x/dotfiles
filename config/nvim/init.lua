@@ -15,16 +15,20 @@ vim.opt.list          = true
 vim.opt.number        = true
 vim.opt.tabstop       = 4
 vim.opt.wildmode      = {'longest:full', 'full'}
--- share clipboard with OS
-vim.opt.clipboard:append('unnamedplus,unnamed')
 
--- Copy current file path (relative) to clipboard
+vim.keymap.set('n', '<M-Left>',  ':<C-u>tabprevious<CR>')
+vim.keymap.set('n', '<M-Right>', ':<C-u>tabnext<CR>')
+vim.keymap.set('n', '<M-j>',     ':<C-u>cnext<CR>')
+vim.keymap.set('n', '<M-k>',     ':<C-u>cprevious<CR>')
+vim.keymap.set('n', '<M-t>',     ':<C-u>tabnew<CR>')
 vim.keymap.set('n', '<Space>%',  ':let @+ = expand("%")<CR>')
--- Remove Search Highlights
+vim.keymap.set('n', '<Space>P',  '"0P');
 vim.keymap.set('n', '<Space>h',  ':nohlsearch<CR>')
--- Insert current file's directory path
+vim.keymap.set('n', '<Space>p',  '"0p');
+
+vim.keymap.set('c', '<C-a>', '<Home>')
 vim.keymap.set('c', '<C-x>', "<C-r>=expand('%:p:h')<CR>/")
--- Sort Selected Lines
+
 vim.keymap.set('x', '<Space>s', ':sort<CR>')
 
 if vim.fn.executable('rg') == 1 then
@@ -33,7 +37,7 @@ if vim.fn.executable('rg') == 1 then
 end
 
 vim.api.nvim_create_autocmd('QuickFixCmdPost', {
-  pattern = {'vim', 'grep'},
+  pattern = {'vim', 'grep', 'make'},
 
   callback = function()
     if #vim.fn.getqflist() > 1 then
@@ -45,7 +49,8 @@ vim.api.nvim_create_autocmd('QuickFixCmdPost', {
 vim.filetype.add({
   extension = {
     axlsx = 'ruby',
-    jb    = 'ruby'
+    jb    = 'ruby',
+    jsonl = 'json'
   },
 
   filename = {
