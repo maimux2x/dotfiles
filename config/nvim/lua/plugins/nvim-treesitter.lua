@@ -1,20 +1,19 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  build = ':TSUpdate',
+  {
+    'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
+    build = ':TSUpdate',
 
-  dependencies = {
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    'RRethy/nvim-treesitter-endwise',
-    'andymass/vim-matchup',
-    -- 'nvim-treesitter/nvim-treesitter-context',
-    'nvim-treesitter/nvim-treesitter-refactor',
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    'windwp/nvim-ts-autotag',
-  },
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      'RRethy/nvim-treesitter-endwise',
+      'andymass/vim-matchup',
+      'windwp/nvim-ts-autotag',
+    },
 
-  config = function()
-    require('nvim-treesitter.configs').setup {
-      ensure_installed = {
+    config = function()
+      local ensure_installed = {
         'bash',
         'c',
         'cpp',
@@ -62,71 +61,24 @@ return {
         'vim',
         'xml',
         'yaml',
-      },
-
-      sync_install = true,
-
-      autotag = {
-        enable = true
-      },
-
-      endwise = {
-        enable = true
-      },
-
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false
-      },
-
-      incremental_selection = {
-        enable = true,
-
-        keymaps = {
-          init_selection = 'gnn',
-          node_incremental = 'grn',
-          scope_incremental = 'grc',
-          node_decremental = 'grm'
-        }
-      },
-
-      indent = {
-        enable = false
-      },
-
-      matchup = {
-        enable = true
-      },
-
-      refactor = {
-        highlight_definitions = {
-          enable = true
-        },
-
-        highlight_current_scope = {
-          enable = false
-        },
-
-        smart_rename = {
-          enable = true,
-
-          keymaps = {
-            smart_rename = 'grr'
-          }
-        },
-
-        navigation = {
-          enable = true,
-
-          keymaps = {
-            goto_definition = 'gnd',
-            list_definitions = 'gnD',
-            list_definitions_toc = 'gO',
-            goto_next_usage = '<a-*>',
-            goto_previous_usage = '<a-#>'
-          }
-        }
       }
-    }
-  end
+
+      local installed = require('nvim-treesitter.config').get_installed()
+      local to_install = vim.iter(ensure_installed)
+        :filter(function(p) return not vim.tbl_contains(installed, p) end)
+        :totable()
+
+      if #to_install > 0 then
+        require('nvim-treesitter').install(to_install)
+      end
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          pcall(vim.treesitter.start)
+        end,
+      })
+
+      require('nvim-ts-autotag').setup()
+    end,
+  },
 }

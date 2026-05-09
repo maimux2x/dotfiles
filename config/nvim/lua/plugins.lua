@@ -112,6 +112,5 @@ return {
   'tpope/vim-sleuth',
   'tpope/vim-unimpaired',
   'varnishcache-friends/vim-varnish',
-  'windwp/nvim-ts-autotag',
   'wsdjeg/vim-fetch'
 }

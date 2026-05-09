@@ -1,6 +1,7 @@
 [tools]
 node = "lts"
 ruby = "4.0"
+tree-sitter = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
