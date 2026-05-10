@@ -6,13 +6,20 @@ return {
     build = ':TSUpdate',
 
     dependencies = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
       'RRethy/nvim-treesitter-endwise',
       'andymass/vim-matchup',
       'windwp/nvim-ts-autotag',
     },
 
     config = function()
+      -- vim.treesitter.start を上書きして lang 自動解決とエラー抑制を行う
+      vim.treesitter.start = (function(wrapped)
+        return function(bufnr, lang)
+          lang = lang or vim.api.nvim_get_option_value('filetype', { buf = bufnr })
+          pcall(wrapped, bufnr, lang)
+        end
+      end)(vim.treesitter.start)
+
       local ensure_installed = {
         'bash',
         'c',
@@ -73,8 +80,8 @@ return {
       end
 
       vim.api.nvim_create_autocmd('FileType', {
-        callback = function()
-          pcall(vim.treesitter.start)
+        callback = function(args)
+          vim.treesitter.start(args.buf)
         end,
       })
 

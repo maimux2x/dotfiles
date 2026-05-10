@@ -58,6 +58,7 @@ return {
         -- 'glint', -- nvim-lspconfig内部でconfig nil エラーが発生するため無効化
         'gopls',
         'graphql',
+        'herb_ls',
         'html',
         'jdtls',
         'jsonls',
