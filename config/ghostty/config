@@ -2,11 +2,6 @@
 
 cursor-style = block
 cursor-style-blink = false
-font-family = "Moralerspace Krypton HWNF"
-font-feature = -calt
-font-feature = -dlig
-font-feature = -liga
-font-size = 13
 
 ### features
 
@@ -17,3 +12,9 @@ link-previews = osc8
 quick-terminal-size = 600px,800px
 quick-terminal-position = bottom
 
+# Font
+font-family = "Moralerspace Krypton HWNF"
+font-feature = -calt
+font-feature = -dlig
+font-feature = -liga
+font-size = 13
