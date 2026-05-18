@@ -1,5 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = 'main',
   build = ':TSUpdate',
   lazy = false,
 
@@ -13,6 +14,8 @@ return {
   },
 
   config = function()
+    vim.opt.runtimepath:prepend(vim.fs.joinpath(vim.fn.stdpath('data'), 'site'))
+
     require('nvim-treesitter').install({
       'bash',
       'c',
